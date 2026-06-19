@@ -19,6 +19,7 @@ import typescriptEslint from 'typescript-eslint';
 import reportNameUtilsPlugin from './plugins/eslint-plugin-report-name-utils.mjs';
 import expensifyProcessor from './processors/eslint-processor-expensify.mjs';
 
+
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
@@ -32,7 +33,6 @@ const projectRoot = path.resolve(dirname, '../..');
 // We point it at `eslint-config-expensify`'s shipped rules (so configs that
 // rely on `rulesdir/<rule>` resolve them) and at our own `eslint-plugin-local-rules/`
 // at the repo root.
-const require = createRequire(import.meta.url);
 const expensifyConfigDirectory = path.dirname(require.resolve('eslint-config-expensify/package.json'));
 const expensifyRulesDir = path.resolve(expensifyConfigDirectory, 'eslint-plugin-expensify');
 const localRulesDir = path.resolve(projectRoot, 'eslint-plugin-local-rules');
