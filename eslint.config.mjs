@@ -1,3 +1,7 @@
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+
 // Re-export the real config from config/eslint/ so editor integrations,
 // `npx eslint`, and anything else using ESLint's flat-config autodiscovery
 // can find it at the repo root. The real config lives in config/eslint/
